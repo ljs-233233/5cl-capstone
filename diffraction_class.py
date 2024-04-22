@@ -62,3 +62,30 @@ def plot(diffraction, glim, dlim, name, imax):
     ax.imshow(diffraction.get_diffraction(), cmap="gray", interpolation="bilinear", aspect='auto', vmax=imax)
     plt.savefig(f"{name.lower()}_diffraction.jpg")
     plt.show()
+
+# Function that plots the grating shape and diffraction pattern
+def graph(diffraction, glim, dlim, name, imax):
+    center = diffraction.get_size() // 2
+    
+    fig = plt.figure()
+    fig.set_size_inches(8, 8)
+    ax = fig.add_subplot(111)
+    ax.set_title(f"{name} Grating Shape")
+    ax.set_xlim(center - glim, center + glim)
+    ax.set_ylim(center - glim, center + glim)
+    ax.imshow(diffraction.get_grating(), cmap="gray")
+    ax.set_axis_off()
+    # plt.savefig(f"{name.lower()}_grating.jpg")
+    plt.show()
+    
+    
+    fig = plt.figure()
+    fig.set_size_inches(8, 8)
+    ax = fig.add_subplot(111)
+    ax.set_title(f"{name} Diffraction Pattern")
+    ax.set_xlim(center - dlim, center + dlim)
+    ax.set_ylim(center - dlim, center + dlim)
+    ax.set_axis_off()
+    ax.imshow(diffraction.get_diffraction(), cmap="gray", interpolation="bilinear", aspect='auto', vmax=imax)
+    # plt.savefig(f"{name.lower()}_diffraction.jpg")
+    plt.show()
