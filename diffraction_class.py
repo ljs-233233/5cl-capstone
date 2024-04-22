@@ -13,7 +13,7 @@ class Diffraction:
         
     # Helper Function, calculate the diffraction pattern as a 2D array
     def fourier_transform(self):
-        ft_real = np.absolute(fft.fft2(1 - self.grating))
+        ft_real = np.absolute(fft.fft2(1 - self.grating)) ** 2
         intensity = ft_real / np.sqrt(np.sum(ft_real ** 2))
         pattern = np.zeros(intensity.shape)
         for i in np.arange(self.shape[0]):
