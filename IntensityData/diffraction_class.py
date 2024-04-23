@@ -55,7 +55,7 @@ def plot(diffraction, glim, dlim, name, imax):
     fig = plt.figure()
     fig.set_size_inches(8, 8)
     ax = fig.add_subplot(111)
-    ax.set_title(f"{name} Diffraction Pattern")
+#     ax.set_title(f"{name} Diffraction Pattern")
     ax.set_xlim(center - dlim, center + dlim)
     ax.set_ylim(center - dlim, center + dlim)
     ax.set_axis_off()
